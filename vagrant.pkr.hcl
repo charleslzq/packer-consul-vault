@@ -13,6 +13,10 @@ build {
     destination = "/tmp/install.sh"
   }
   provisioner "file" {
+    source      = "hashi-env.sh"
+    destination = "/tmp/hashi-env.sh"
+  }
+  provisioner "file" {
     source      = "consul.hcl"
     destination = "/tmp/consul.hcl"
   }

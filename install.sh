@@ -28,6 +28,8 @@ sudo mkdir -p /var/lib/consul
 sudo chown -R hashi:hashi /var/lib/consul
 sudo chmod -R 775 /var/lib/consul
 
+sudo mv hashi-env.sh /etc/profile.d/
+
 sudo mkdir -p /etc/consul.d
 sudo mv consul.hcl /etc/consul.d/
 sudo chown -R hashi:hashi /etc/consul.d
@@ -39,8 +41,6 @@ sudo mv vault.hcl /etc/vault.d/
 sudo chown -R hashi:hashi /etc/vault.d
 sudo mv vault.service /etc/systemd/system/
 sudo systemctl enable vault
-
-echo "export VAULT_ADDR=http://:8200" > /home/vagrant/.bashrc
 
 sudo rm -rf /tmp/*
 cat /dev/null > ~/.bash_history
