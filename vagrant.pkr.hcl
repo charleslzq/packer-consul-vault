@@ -9,33 +9,12 @@ source "vagrant" "consul-vault" {
 build {
   sources = ["source.vagrant.consul-vault"]
   provisioner "file" {
-    source      = "install.sh"
-    destination = "/tmp/install.sh"
-  }
-  provisioner "file" {
-    source      = "hashi-env.sh"
-    destination = "/tmp/hashi-env.sh"
-  }
-  provisioner "file" {
-    source      = "consul.hcl"
-    destination = "/tmp/consul.hcl"
-  }
-  provisioner "file" {
-    source      = "consul.service"
-    destination = "/tmp/consul.service"
-  }
-  provisioner "file" {
-    source      = "vault.hcl"
-    destination = "/tmp/vault.hcl"
-  }
-  provisioner "file" {
-    source      = "vault.service"
-    destination = "/tmp/vault.service"
+    source      = "files"
+    destination = "/tmp/"
   }
   provisioner "shell" {
     inline = [
-      "ls -la /tmp",
-      "cd /tmp/",
+      "cd /tmp/files",
       "chmod +x install.sh",
       "./install.sh"
     ]

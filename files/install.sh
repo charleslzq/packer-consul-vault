@@ -8,7 +8,7 @@ VAULT_VERSION=1.7.3
 sudo apt-get update
 sudo apt-get install -y zip curl
 
-cd /tmp
+cd /tmp/files
 curl -sSL  https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip > consul.zip
 unzip consul.zip
 sudo chmod +x consul
