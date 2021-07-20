@@ -39,10 +39,12 @@ sudo mv hashi-env.sh /etc/profile.d/
 
 sudo mkdir -p /etc/consul.d
 sudo mv consul.hcl /etc/consul.d/
-sudo mv envconsul.hcl /etc/consul.d/
 sudo chown -R hashi:hashi /etc/consul.d
 sudo mv consul.service /etc/systemd/system/
 sudo systemctl enable consul
+
+sudo mkdir -p /etc/envconsul.d
+sudo mv envconsul.hcl /etc/envconsul.d/
 
 sudo mkdir -p /etc/vault.d
 sudo mv vault.hcl /etc/vault.d/
