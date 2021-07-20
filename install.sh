@@ -40,6 +40,8 @@ sudo chown -R hashi:hashi /etc/vault.d
 sudo mv vault.service /etc/systemd/system/
 sudo systemctl enable vault
 
+echo "export VAULT_ADDR=http://:8200" > /home/vagrant/.bashrc
+
 sudo rm -rf /tmp/*
 cat /dev/null > ~/.bash_history
 history -c
