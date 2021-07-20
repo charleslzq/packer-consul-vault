@@ -5,7 +5,6 @@ set -e
 CONSUL_VERSION=1.10.1
 
 sudo apt-get update
-sudo apt-get upgrade
 sudo apt-get install -y zip curl
 
 cd /tmp
