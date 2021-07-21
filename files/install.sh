@@ -5,6 +5,8 @@ set -e
 CONSUL_VERSION=1.10.1
 VAULT_VERSION=1.7.3
 ENV_CONSUL_VERSION=0.11.0
+TF_VERSION=1.0.2
+PAKCER_VERSION=1.7.4
 
 sudo apt-get update
 sudo apt-get install -y zip curl
@@ -27,6 +29,18 @@ unzip envconsul.zip
 sudo chmod +x envconsul
 sudo mv envconsul /usr/bin/
 envconsul -h
+
+curl -sSL https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip > terraform.zip
+unzip terraform.zip
+sudo chmod +x terraform
+sudo mv terraform /usr/bin/
+terraform --version
+
+curl -sSL https://releases.hashicorp.com/packer/${PAKCER_VERSION}/packer_${PAKCER_VERSION}_linux_amd64.zip > packer.zip
+unzip packer.zip
+sudo chmod +x packer
+sudo mv packer /usr/bin/
+packer --version
 
 sudo groupadd --system hashi
 sudo useradd -s /sbin/nologin --system -g hashi hashi
